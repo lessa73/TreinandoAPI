@@ -1,21 +1,21 @@
-const sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
-const DB_NAME = 'chefao';
-const DB_USER = 'root';
-const DB_PASS = '';
+const DB_NAME = 'heroku_7c1cde81c68e7fa';
+const DB_USER = 'b4cc5078b73d0c';
+const DB_PASS = '9e7f98b8';
 const DB_CONFIG = {
     dialect: 'mysql',
-    host: 'localhost',
+    host: 'us-cdbr-east-05.cleardb.net',
     port: 3306,
 };
 
 let db = {};
 
 try {
-    db = new sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);
+    db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);
 }   catch (error) {
     console.error('Erro ao tentar uma conexão com o banco de dados');
-};
+}
 
 async function hasConection() {
     try {
@@ -24,7 +24,7 @@ async function hasConection() {
     } catch (error) {
       console.error( 'Não conectado ao banco de dados' );
     }
-};
+}
 
 Object.assign(db, {
     hasConection,

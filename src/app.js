@@ -1,7 +1,7 @@
 const express = require( 'express');
 const routes = require('./routes');
-
-const db = require('./database/index.js');
+//mysql://b4cc5078b73d0c:9e7f98b8@us-cdbr-east-05.cleardb.net/heroku_7c1cde81c68e7fa
+const db = require('./database');
 
 const app = express();
 
